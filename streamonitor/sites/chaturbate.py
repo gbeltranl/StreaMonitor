@@ -29,7 +29,8 @@ class Chaturbate(Bot):
             else:
                 status = self.Status.OFFLINE
         except Exception as e:
-            print('Thrown Exception '+e)
+            print("Thrown exception")
+            print(e)
             status = self.Status.RATELIMIT
 
         self.ratelimit = status == self.Status.RATELIMIT
