@@ -19,7 +19,7 @@ class Chaturbate(Bot):
         data = {"room_slug": self.username, "bandwidth": "high"}
 
         try:
-            r = requests.post("x", headers=headers, data=data)
+            r = requests.post("https://chaturbate.com/get_edge_hls_url_ajax/", headers=headers, data=data)
             req = r.request
             print('{}\n{}\r\n{}\r\n\r\n{}'.format(
                 '-----------START-----------',
