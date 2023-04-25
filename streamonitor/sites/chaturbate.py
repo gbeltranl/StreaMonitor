@@ -20,9 +20,15 @@ class Chaturbate(Bot):
 
         try:
             r = requests.post("https://chaturbate.com/get_edge_hls_url_ajax/", headers=headers, data=data)
-            print(r)
             self.lastInfo = r.json()
-        
+            req = r.request
+            print('{}\n{}\r\n{}\r\n\r\n{}'.format(
+        '-----------START-----------',
+        req.method + ' ' + req.url,
+        '\r\n'.join('{}: {}'.format(k, v) for k, v in req.headers.items()),
+        req.body,
+    ))
+            
             if self.lastInfo["room_status"] == "public":
                 status = self.Status.PUBLIC
             elif self.lastInfo["room_status"] in ["private", "hidden"]:
