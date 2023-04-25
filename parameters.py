@@ -1,6 +1,6 @@
 DOWNLOADS_DIR = 'downloads'
 MIN_FREE_DISK_PERCENT = 1.0  # in %
-DEBUG = False
+DEBUG = True
 
 # You can enter a number to select a specific height.
 # Use a huge number here and closest match to get the highest resolution variant
